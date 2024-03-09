@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <!--{% load static %}-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ name }} - Laju Primisweiler</title>
+    <!--<link rel="stylesheet" href="{% static '/css/index.css' %}">
+    <link rel="stylesheet" href="{% static '/css/mobile.css' %}"> -->
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/landing.css">
+    <link rel="stylesheet" href="../css/mobile.css">
+    <script src="https://kit.fontawesome.com/f6ef36e674.js" crossorigin="anonymous"></script>
+    <script>
+        function getCookie(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].trim();
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+        const csrftoken = getCookie('csrftoken');
+    </script>
+</head>
+<body>
+<header>
+    <nav>
+        <div class="nav-logo-container">
+            <a href="#">
+                <img src="../images/laju.png" alt="logo" class="nav-logo">
+            </a>
+        </div>
+        <ul class="nav-list">
+            <li class="nav-item">
+                <a href="home.html" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="news.html" class="nav-link">News</a>
+            </li>
+            <li class="nav-item">
+                <a href="uns.html" class="nav-link">Uns</a>
+            </li>
+        </ul>
+        <div class="nav-button-container">
+           <!-- <i onclick="darkMode()" class="fa-solid fa-circle-half-stroke darkmode"></i>-->
+            <button class="nav-contact-button"><a href="kontakt.html">Kontakt</a></button>
+            <div class="nav-dropdown-btn">
+                <span class="nav-button-rect1"></span>
+                <span class="nav-button-rect2"></span>
+                <span class="nav-button-rect3"></span>
+            </div>
+        </div>
+        <div class="nav-dropdown-menu hidden">
+            <ul class="nav-dropdown-list">
+                <li class="nav-dropdown-item">
+                    <a href="home.html" class="nav-dropdown-link">Home</a>
+                </li>
+                <li class="nav-dropdown-item">
+                    <a href="news.html" class="nav-dropdown-link">News</a>
+                </li>
+                <li class="nav-dropdown-item">
+                    <a href="uns.html" class="nav-dropdown-link">Das sind wir</a>
+                </li>
+                <li class="nav-dropdown-item">
+                    <a href="kontakt.html" class="nav-dropdown-link">Kontakt</a>
+                </li>
+            </ul>
+            <div class="nav-dropdown-logo-container">
+                <img src="../images/laju.png" alt="logo" class="nav-dropdown-logo">
+            </div>
+        </div>
+    </nav>
+</header>
+
+<content>
+    <div class="content-landing-wrapper" onscroll="scrollHideNav()">
+        <div class="content-landing">
+            <img src="../images/laju.png" alt="logo">
+        </div>
+    </div>
+
+
+
+
+    <!-- <div>
+         {% block home %}{% endblock home %}
+         {% block news %}{% endblock news %}
+         {% block uns %}{% endblock uns %}
+         {% block kontakt %}{% endblock kontakt %}
+     </div>-->
+</content>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="footer-heading">
+                <h1>Get in touch</h1>
+                <div class="footer-email">
+                    <h2>Schreib uns eine <a href="mailto:#"><span>E-mail!</span></a></h2>
+                </div>
+            </div>
+        </div>
+        <div class="footer-col-container">
+            <div class="footer-col-1">
+                <ul class="footer-list">
+                    <li class="footer-item">
+                        <a href="daten.html" class="footer-link">Datenschutzerklärung</a>
+                    </li>
+                    <li class="footer-item">
+                        <a href="impressum.html" class="footer-link">Impressum</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-col-2">
+                <div class="footer-socials">
+                    <a href="https://www.instagram.com/lj_primisweiler/" target="_blank">
+                        <img src="../images/Instagram.svg" alt="instagram-logo">
+                    </a>
+                    <a href="https://www.facebook.com/LJPrimisweiler/?locale=de_DE" target="_blank">
+                        <img src="../images/facebook.svg" alt="facebook-logo">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script defer src="../js/main.js"></script>
+</body>
+</html>

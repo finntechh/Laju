@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<meta charset="UTF-8" />
+<html lang="de">
+  <head>
+    {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% if name == 'index' %}
+    <title>Landjugend Primisweiler</title>
+    {% else %}
+    <title>{{ name }} - Landjugend Primisweiler</title>
+    {% endif %}
+    <link rel="stylesheet" href="{% static '/css/index.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/mobile.css' %}" />
+    {% block css %}{% endblock css %}
+    <link
+      rel="shortcut icon"
+      href="{% static '/images/laju.png' %}"
+      type="image/x-icon"
+    />
+    <script
+      src="https://kit.fontawesome.com/f6ef36e674.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="//unpkg.com/alpinejs" defer></script>    
+    <script>
+      function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== "") {
+          const cookies = document.cookie.split(";");
+          for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === name + "=") {
+              cookieValue = decodeURIComponent(
+                cookie.substring(name.length + 1)
+              );
+              break;
+            }
+          }
+        }
+        return cookieValue;
+      }
+      const csrftoken = getCookie("csrftoken");
+    </script>
+  </head>
+  <body>
+    <header>
+      <nav>
+
+          <div class="nav-logo-container">
+              <a href="{% url 'Home' %}">
+                  <img class="nav-logo" src="{% static 'images/.png' %}" alt="logo">
+              </a>
+          </div>
+
+          <div class="nav-menu" x-data="{navDropdown: false}">
+              <ul class="nav-list">
+                  <li class="nav-list-item">
+                      <a class="nav-list-link" href="{% url 'Home' %}">Home</a>
+                  </li>
+                  <li class="nav-list-item">
+                      <a class="nav-list-link" href="{% url 'News' %}">News</a>
+                  </li>
+                  <li class="nav-list-item">
+                      <a class="nav-list-link" href="{% url 'Uns' %}">Über uns</a>
+                  </li>
+                  <li class="nav-list-item">
+                      <a class="nav-list-link" href="{% url 'Kontakt' %}">Kontakt</a>
+                  </li>
+
+              </ul>
+
+              <div class="nav-dropdown-btn" @click="navDropdown = !navDropdown; handleScroll(navDropdown); burgerAnimation(navDropdown)">
+                  <span class="nav-button-rect1"></span>
+                  <span class="nav-button-rect2"></span>
+                  <span class="nav-button-rect3"></span>
+              </div>
+
+              <div class="nav-dropdown-menu" x-show="navDropdown">
+                  dropdown menu
+              </div>
+
+          </div>
+
+      </nav>
+  </header>
+
+    <main>
+        <div class="content">
+            {% block home %}{% endblock home %} {% block news %}{% endblock news %}
+            {% block uns %}{% endblock uns %} {% block kontakt %}{% endblock kontakt %}
+            {% block landing %}{% endblock landing %} {% block datenschutz %}  
+            {% endblock datenschutz %} {% block impressum %}{% endblock impressum %}
+        </div>
+    </main>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-heading">
+            <h1>Get in touch</h1>
+            <div class="footer-email">
+              <h2>
+                Schreib uns eine <a href="mailto:#"><span>E-mail!</span></a>
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div class="footer-col-container">
+          <div class="footer-col-1">
+            <ul class="footer-list">
+              <li class="footer-item">
+                <a href="{% url 'Datenschutz' %}" class="footer-link"
+                  >Datenschutzerklärung</a
+                >
+              </li>
+              <li class="footer-item">
+                <a href="{% url 'Impressum' %}" class="footer-link"
+                  >Impressum</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col-2">
+            <div class="footer-socials">
+              <a
+                href="https://www.instagram.com/lj_primisweiler/"
+                target="_blank"
+              >
+                <img
+                  src="{% static 'images/Instagram.svg' %}"
+                  alt="instagram-logo"
+                />
+              </a>
+              <a
+                href="https://www.facebook.com/LJPrimisweiler/?locale=de_DE"
+                target="_blank"
+              >
+                <img
+                  src="{% static 'images/facebook.svg' %}"
+                  alt="facebook-logo"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script defer src="{% static 'js/main.js' %}"></script>
+  </body>
+</html>
