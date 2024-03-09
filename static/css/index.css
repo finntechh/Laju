@@ -10,8 +10,8 @@ a {
 
 :root {
     --dark: #0c0c19;
-    --light: #fff8f2;
-    --accent: #02fec6;
+    --light: #fffcf9;
+    --accent: #FFDD0C;
 }
 
 body {
@@ -43,7 +43,7 @@ div, ul, li, a, header, nav {
 header {
     position: sticky;
     top: 0;
-    background-color: var(--dark);
+    background-color: var(--light);
     min-height: 8vh;
     z-index: 10;
     display: flex;
@@ -58,11 +58,11 @@ nav {
 }
 
 .nav-logo-container {
-    margin: 10px;
+    margin: 10px 20px;
 }
 
 .nav-logo {
-    max-width: 65px;
+    max-width: 150px;
 }
 
 .nav-list {
@@ -78,30 +78,30 @@ nav {
 }
 
 .nav-list-link {
-    color: var(--light);
+    color: var(--dark);
     padding: 6px 18px;
-    border: 3px solid var(--light);
+    border: 3px solid var(--dark);
     border-radius: 15px;
     font-weight: bold;
     transition-duration: .2s;
 }
 
 .nav-list-link:hover {
-    background-color: var(--light);
-    color: var(--dark);
+    background-color: var(--dark);
+    color: var(--light);
 }
 
 .nav-dropdown-btn {
     display: flex;
     flex-direction: column;
     cursor: pointer;
-    margin: .5rem;
+    margin: .5rem 2rem;
 }
 
 .nav-dropdown-btn span {
     height: 6px;
     width: 40px;
-    background-color: var(--light);
+    background-color: var(--dark);
     border-radius: 3px;
     margin-top: 3px;
 }
@@ -116,13 +116,12 @@ nav {
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: #02fec6;
+    background-color: var(--accent);
 }
 
 /* Navbar ende */
 
 .content {
-    height: 92vh;
 }
 
 

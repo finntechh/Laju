@@ -54,6 +54,10 @@
         text-align: center;
     }
 
+    .instagram-embed {
+        width: 100%;
+    }
+
 }
 
 @media screen and (min-height: 760px) {
