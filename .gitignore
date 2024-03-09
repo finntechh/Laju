@@ -1,3 +1,5 @@
+templates/Development
+
 # Django #
 *.log
 *.pot
@@ -5,6 +7,7 @@
 __pycache__
 db.sqlite3
 media
+
 
 
 # Backup files # 
