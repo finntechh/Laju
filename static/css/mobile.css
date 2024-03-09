@@ -54,8 +54,8 @@
         text-align: center;
     }
 
-    .instagram-embed {
-        width: 100%;
+    .lj-map {
+        display: none;
     }
 
 }

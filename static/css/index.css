@@ -139,6 +139,7 @@ footer {
 .footer-content {
     margin: 2rem 0;
     display: flex;
+    justify-content: space-around;
 }
 
 .footer-heading {
@@ -159,11 +160,6 @@ footer {
     font-family: monospace, sans-serif;
     color: var(--grey);
     transition-duration: .2s;
-}
-
-.footer-email span {
-    text-decoration: underline;
-    text-decoration-thickness: 4px;
 }
 
 .footer-email span:hover {
