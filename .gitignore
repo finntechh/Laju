@@ -1,4 +1,5 @@
 templates/Development
+django
 
 # Django #
 *.log
