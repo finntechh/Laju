@@ -1,19 +1,5 @@
-{% extends "base.html" %}
-
-{% load static %}
-
-{% block css %}
-<link rel="stylesheet" href="{% static 'css/home.css' %}">
-{% endblock css %}
-
-{% block home %}
-
-<div class="home-content">
-home
-
-</div>
-
-  
-
-
-{% endblock home %}
+{% extends 'base.html' %} {% load static %} {% block css %}
+  <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+{% endblock %} {% block home %}
+  <div class="home-content">home</div>
+{% endblock %}

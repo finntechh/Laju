@@ -25,9 +25,10 @@
         display: none;
     }
 
-    .nav-logo-container {
+    .nav-logo {
         width: 70%;
         justify-content: flex-start;
+        margin-top: 8px;
     }
 
     .footer-list {

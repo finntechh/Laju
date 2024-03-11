@@ -116,7 +116,31 @@ nav {
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: var(--accent);
+    background-color: var(--accent); 
+}
+
+.nav-dropdown-list {
+    padding: 2rem 0;
+    list-style-type: none;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+.nav-dropdown-item {
+    margin: 1rem 0;
+    width: 80%;
+}
+
+.nav-dropdown-link {
+    background-color: var(--light);
+    padding: 16px 40px;
+    border: 3px solid var(--dark);
+    border-radius: 10px 0 0 10px;
+    display: block;
+    color: var(--dark);
+    background-color: var(--light);
+    box-shadow: 5px 10px 0px black;
 }
 
 /* Navbar ende */
